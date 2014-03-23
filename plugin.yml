@@ -1,0 +1,60 @@
+name: SpellItems
+main: me.andre111.items.SpellItems
+version: 1.3.1
+website: http://andre111.bplaced.net/
+author: andre111
+
+softdepend: [ProtocolLib]
+
+commands:
+   siGive:
+      description: Allows you to give Items to Players using the SpellItems Syntax(Look into the items.yml for it)
+      aliases: []
+      usage: /<command> [player] [...item]
+      permission: spellitems.give
+   siEnchant:
+      description: Allows you to enchant the Item you are currently holding with a custom Enchantment
+      aliases: []
+      usage: /<command> [internal_enchantment_name]
+      permission: spellitems.enchant
+   siMana:
+      description: Allows you to set the maximum Mana and Mana regenerationrate for Players
+      aliases: []
+      usage: /<command> [player] [maxmana_or_regen] [value]
+      permission: spellitems.mana
+   siReward:
+      description: Gives a Player Rewardpoints/resets them
+      aliases: []
+      usage: /<command> [player] [points_or_"reset"]
+      permission: spellitems.reward
+   siHelp:
+      description: Provides more info about the commands or the Itemsyntax(use "syntax")
+      aliases: []
+      usage: /<command> [command]
+      permission: spellitems.help
+      
+permissions:
+   spellitems.*:
+      description: Gives you all SpellItems permissions
+      default: op
+      children:
+         spellitems.give: true
+         spellitems.enchant: true
+         spellitems.mana: true
+         spellitems.reward: true
+         spellitems.help: true
+   spellitems.give:
+      description: Allows you to give Items to Players using the SpellItems Syntax(Look into the items.yml for it)
+      default: op
+   spellitems.enchant:
+      description: Allows you to enchant the Item you are currently holding with a custom Enchantment
+      default: op
+   spellitems.mana:
+      description: Allows you to set the maximum Mana and Mana regenerationrate for Players
+      default: op
+   spellitems.reward:
+      description: Gives a Player Rewardpoints/resets them
+      default: op
+   spellitems.help:
+      description: Provides more info about the commands or the Itemsyntax(use "syntax")
+      default: op
